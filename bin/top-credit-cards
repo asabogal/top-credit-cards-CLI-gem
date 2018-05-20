@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
-puts "test"
+require_relative '../lib/top_credit_cards'
+
+TopCreditCards::CLI.new.call
