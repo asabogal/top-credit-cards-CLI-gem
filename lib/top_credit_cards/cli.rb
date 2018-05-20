@@ -23,7 +23,7 @@ class TopCreditCards::CLI
     #!!! THIS CODE!!
     #print the card base on input
     #print_card(input) .. ?
-    #scrape! .css("div.res-shumer-box") ==> contains card attributes
+    #scrape! .css("div#all-schumer-boxes") ==> contains card attributes
     dialogue
   end
 
