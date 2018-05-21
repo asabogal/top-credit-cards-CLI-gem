@@ -13,11 +13,14 @@ class TopCreditCards::CLI
 
   def core
     #ask user for input
-    puts
     puts "Here are the current offers:"
+    puts
     list_rewards
     puts "Enter 1-15 to learn more about these offers"
     input = gets.strip.to_i
+    card = TopCreditCards::Card.find_by_id(input)
+
+    #create print card method to display the selected card
 
     #!!! THIS CODE!!
     #print the card base on input
@@ -33,7 +36,7 @@ class TopCreditCards::CLI
     input = gets.strip.downcase
     if input == "y" || input == "yes"
       core
-    elsif input == "n" || input == "n"
+    elsif input == "n" || input == "no"
       puts "We hope you found the right Credit Card for you!"
       exit
     else
@@ -46,6 +49,9 @@ class TopCreditCards::CLI
     TopCreditCards::Card.all.each.with_index(1) {|card, i| puts "#{i}. #{card.name}"}
         ##reduced functionality to list names not rewards
   end
+
+
+
 
 
 end
