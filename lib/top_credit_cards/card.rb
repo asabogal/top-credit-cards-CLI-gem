@@ -1,13 +1,13 @@
 require 'pry'
-# class TopCreditCards::Card
-class Card
+
+class TopCreditCards::Card
 
   @@all = []
 
-  attr_accessor :reward, :name, :description, :purchases_intro_apr, :balance_transfers_intro_apr, :regular_apr, :annual_fee, :credit_needed, :apply_url
-
+  attr_accessor :name, :description, :purchases_intro_apr, :balance_transfers_intro_apr, :regular_apr, :annual_fee, :credit_needed, :apply_url
+  #:reward
   def initialze
-    @reward = reward
+    # @reward = reward
     @name = name
     @description = description
     @purchases_intro_apr = purchases_intro_apr
@@ -27,13 +27,18 @@ class Card
     @@all
   end
 
-  def self.new_from_page(page)
-    card = Card.new
-    #add card data attributes
-    card
-  end
+  
 
-  def display_card_from_input(input)
+  # def self.new_from_page(page)
+  #   card = Card.new
+  #   #add card data attributes
+  #   card
+  # end
+
+  def self.display_card_from_input(input)
+    def self.find(id)
+    self.all[id-1]
+  end
   end
 
 end
