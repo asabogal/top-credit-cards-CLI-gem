@@ -7,7 +7,6 @@ class TopCreditCards::CLI
     puts "***Welcome to Top Credit Cards!!***"
     puts "Looking for the best credit cards? We can help!"
     puts "For rewards, cash back, and more, check out our top picks below and find the right card for you."
-    # puts "Here are the current offers:"
 
     core
   end
@@ -16,13 +15,13 @@ class TopCreditCards::CLI
     #ask user for input
     puts
     puts "Here are the current offers:"
-    list_cards
+    list_rewards
     puts "Enter 1-15 to learn more about these offers"
     input = gets.strip.to_i
 
     #!!! THIS CODE!!
     #print the card base on input
-    #print_card(input) .. ?
+    #display_card_from_input(input) .. ?
     #scrape! .css("div#all-schumer-boxes") ==> contains card attributes
     dialogue
   end
@@ -44,9 +43,9 @@ class TopCreditCards::CLI
   end
 
 
-  #list credit card type? :
+  #list credit card.reward :
   #make method to list and call in #call?::
-  def list_cards
+  def list_rewards
     a = "a b c"
     # a = TOP TRAVEL REWARDS CREDIT CARD
     # TOP REWARDS CREDIT CARD
@@ -66,11 +65,11 @@ class TopCreditCards::CLI
     array = a.split(" ")
     cards = array.each.with_index(1) {|card, i| puts "#{i}. #{card}"}
 
-    #@card_type = TopCreditCards::Card.today
-    #card_type.each_with_index {|card, i| puts "#{i}. #{card.type}" }
 
-    #must code the type: Card.type and list each
-    #scrape card type attribute of Card class??
+    Card.all.each.with_index(1) {|card, i| puts "#{i}. #{card.reward}" }
+
+    #must code the reward: Card.reward and list each
+    #scrape card reward attribute of Card class??
     #.css("h2").text.strip
   end
 
