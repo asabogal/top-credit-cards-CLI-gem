@@ -27,18 +27,9 @@ class TopCreditCards::Card
     @@all
   end
 
-  
-
-  # def self.new_from_page(page)
-  #   card = Card.new
-  #   #add card data attributes
-  #   card
-  # end
-
-  def self.display_card_from_input(input)
-    def self.find(id)
+  def self.find_by_id(id)
     self.all[id-1]
   end
-  end
+
 
 end
