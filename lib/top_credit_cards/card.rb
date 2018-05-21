@@ -29,5 +29,7 @@ class TopCreditCards::Card
     card
   end
 
+  def display_card_from_input(input)
+  end
 
 end
