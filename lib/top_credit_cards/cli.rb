@@ -2,7 +2,7 @@ require 'pry'
 class TopCreditCards::CLI
 
   def call
-    #need to initialize Card.new?
+    TopCreditCards::Scraper.scrape_and_make_cards
     #create cards!
     puts "***Welcome to Top Credit Cards!!***"
     puts "Looking for the best credit cards? We can help!"
@@ -42,35 +42,9 @@ class TopCreditCards::CLI
     end
   end
 
-
-  #list credit card.reward :
-  #make method to list and call in #call?::
   def list_rewards
-    a = "a b c"
-    # a = TOP TRAVEL REWARDS CREDIT CARD
-    # TOP REWARDS CREDIT CARD
-    # TOP CASH BACK CREDIT CARD FOR EVERYDAY SPENDING
-    # TOP CASH BACK CREDIT CARD FOR FLAT-RATE REWARD
-    # TOP NO ANNUAL FEE CREDIT CARD
-    # TOP BALANCE TRANSFER CREDIT CARD
-    # TOP 0% APR CREDIT CARD
-    # TOP SIGN-UP BONUS CREDIT CARD
-    # TOP LOW INTEREST CREDIT CARD
-    # TOP NO FOREIGN TRANSACTION FEE CREDIT CARD
-    # TOP AIRLINE MILES CREDIT CARD
-    # TOP BUSINESS CREDIT CARD
-    # TOP FAIR CREDIT CREDIT CARD
-    # TOP UNSECURED CREDIT CARD FOR BAD CREDIT
-    # TOP STUDENT CREDIT CARD
-    array = a.split(" ")
-    cards = array.each.with_index(1) {|card, i| puts "#{i}. #{card}"}
-
-
-    Card.all.each.with_index(1) {|card, i| puts "#{i}. #{card.reward}" }
-
-    #must code the reward: Card.reward and list each
-    #scrape card reward attribute of Card class??
-    #.css("h2").text.strip
+    TopCreditCards::Card.all.each.with_index(1) {|card, i| puts "#{i}. #{card.name}"}
+        ##reduced functionality to list names not rewards
   end
 
 
