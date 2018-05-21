@@ -1,5 +1,6 @@
 require 'pry'
-class TopCreditCards::Card
+# class TopCreditCards::Card
+class Card
 
   @@all = []
 
@@ -16,7 +17,10 @@ class TopCreditCards::Card
     @credit_needed = credit_needed
     @apply_url = apply_url
 
-    @@all << self.class.all
+  end
+
+  def save
+    @@all << self
   end
 
   def self.all
