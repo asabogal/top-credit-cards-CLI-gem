@@ -22,9 +22,17 @@ class TopCreditCards::CLI
     puts "Enter 1-15 to learn more about these offers"
     input = gets.strip.to_i
 
-    card = TopCreditCards::Card.find_by_id(input)
-    print_card(card)
-    dialogue
+    if input.between?(1,15)
+      card = TopCreditCards::Card.find_by_id(input)
+      print_card(card)
+      dialogue
+
+    else
+      puts
+      puts "** ERROR **"
+      puts "Please enter 1-15 only"
+      core
+      end
   end
 
   def dialogue
@@ -49,7 +57,7 @@ class TopCreditCards::CLI
     puts
     puts "-------------- #{card.reward} --------------"
     puts
-    puts "            #{card.name}            "
+    puts "               #{card.name}               "
     puts
     puts "Purchases Intro Apr:          #{card.purchases_intro_apr}"
     puts "Balance Transfers Intro Apr:  #{card.balance_transfers_intro_apr}"
