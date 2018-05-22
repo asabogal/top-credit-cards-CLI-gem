@@ -54,9 +54,9 @@ class TopCreditCards::CLI
 
   def print_card(card)
     puts
-    puts "-------------- #{card.reward} --------------"
+    puts "----------- #{card.reward} -----------"
     puts
-    puts "               #{card.name}               "
+    puts "#{card.name}"
     puts
     puts "Purchases Intro Apr:          #{card.purchases_intro_apr}"
     puts "Balance Transfers Intro Apr:  #{card.balance_transfers_intro_apr}"
@@ -65,7 +65,7 @@ class TopCreditCards::CLI
     puts "Credit Needed:                #{card.credit_needed}"
     puts "Apply Here:                   #{card.apply_url}"
     puts
-    puts "-------------- Description --------------"
+    puts "------------------- Description --------------------"
     puts
     puts "#{card.description}"
     puts
