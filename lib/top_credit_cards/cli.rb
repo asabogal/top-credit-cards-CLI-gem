@@ -3,7 +3,7 @@ class TopCreditCards::CLI
 
   def call
     TopCreditCards::Scraper.scrape_and_make_cards
-    #create cards!
+
     puts
     puts "***Welcome to Top Credit Cards!!***"
     puts
@@ -14,7 +14,6 @@ class TopCreditCards::CLI
   end
 
   def core
-    #ask user for input
     puts
     puts "Here are the current offers:"
     puts
@@ -22,19 +21,12 @@ class TopCreditCards::CLI
     puts
     puts "Enter 1-15 to learn more about these offers"
     input = gets.strip.to_i
+
     card = TopCreditCards::Card.find_by_id(input)
-
     print_card(card)
-
-    #!!! THIS CODE!!
-    #print the card base on input
-    #display_card_from_input(input) .. ?
-    #scrape! .css("div#all-schumer-boxes") ==> contains card attributes
     dialogue
   end
 
-  #after card is displayed
-  #create user interaction!!
   def dialogue
     puts "Would you like to see the offers again?"
     input = gets.strip.downcase
@@ -50,13 +42,14 @@ class TopCreditCards::CLI
   end
 
   def list_rewards
-    TopCreditCards::Card.all.each.with_index(1) {|card, i| puts "#{i}. #{card.name}"}
-        ##reduced functionality to list names not rewards
+    TopCreditCards::Card.all.each.with_index(1) {|card, i| puts "#{i}. #{card.reward}"}
   end
 
   def print_card(card)
     puts
-    puts "----------- #{card.name} -----------"
+    puts "-------------- #{card.reward} --------------"
+    puts
+    puts "            #{card.name}            "
     puts
     puts "Purchases Intro Apr:          #{card.purchases_intro_apr}"
     puts "Balance Transfers Intro Apr:  #{card.balance_transfers_intro_apr}"
@@ -65,12 +58,10 @@ class TopCreditCards::CLI
     puts "Credit Needed:                #{card.credit_needed}"
     puts "Apply Here:                   #{card.apply_url}"
     puts
-    puts "----------- Description -------------"
+    puts "-------------- Description --------------"
     puts
     puts "#{card.description}"
     puts
   end
-
-
 
 end
