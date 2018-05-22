@@ -18,4 +18,5 @@ class TopCreditCards::Scraper
           card.save
         end
   end
+  
 end

@@ -16,7 +16,6 @@ class TopCreditCards::Card
     @annual_fee = annual_fee
     @credit_needed = credit_needed
     @apply_url = apply_url
-
   end
 
   def save
