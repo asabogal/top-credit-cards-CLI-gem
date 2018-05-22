@@ -8,7 +8,7 @@ class TopCreditCards::Scraper
           card = TopCreditCards::Card.new
           card.reward = rewards[i]
           card.name = info.css("div.res-offer-left a").text.strip
-          card.description = info.css("div.res-details li").text.strip
+          card.description = info.css("div.res-details li").collect {|e| e.text}.first(8).join("\n")
           card.purchases_intro_apr = info.css("li.first-row dd")[0].text
           card.balance_transfers_intro_apr = info.css("li.first-row dd")[1].text
           card.regular_apr = info.css("li.first-row dd")[2].text
