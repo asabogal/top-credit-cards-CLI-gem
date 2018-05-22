@@ -1,8 +1,6 @@
 # TopCreditCards
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/top_credit_cards`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to Top Credit Cards gem! This is Command Line Interface gem that provides Credit Card information based on a reward type. A list of rewards is presented and based on the user selection by input, Credit Card information relevant to that reward type and offer, is displayed in the CLI.
 
 ## Installation
 
@@ -22,7 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To install, please download or git clone the project files from: https://github.com/asabogal/top-credit-cards-CLI-gem
+From the terminal, go to the main project file. Once in that directory, enter: ./bin/top- credit-cards to open the application.
+Follow the CLI instructions to interact with the application.
 
 ## Development
 
